@@ -17,5 +17,6 @@ public class Milk {
         System.out.println("Production cost: $" + production_cost);
         System.out.printf("Profit: $%.2f", cartons_needed * PROFIT_PER_CARTON);
         
+        prompt.close();
     }
 }
