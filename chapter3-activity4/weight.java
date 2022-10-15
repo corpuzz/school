@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+
 public class weight {
     public static void main(String[] args) {
         double kg = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter your weight(in kg): "));
@@ -11,7 +12,5 @@ public class weight {
             "Weight",
             JOptionPane.INFORMATION_MESSAGE
         );
-
-
     }
 }
