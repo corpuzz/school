@@ -14,7 +14,7 @@ public class volume {
 
         JOptionPane.showMessageDialog(
             null, 
-            "Volume: " + String.format("%.2f", volume) + "g/cm³", 
+            "Volume: " + String.format("%.2f", volume) + " g/cm³", 
             "Volume", 
             JOptionPane.INFORMATION_MESSAGE);
     }
