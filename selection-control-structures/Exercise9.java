@@ -22,9 +22,15 @@ public class Exercise9 {
         int split_entry = 0;
         int single_story = 0;
 
+        // Enter base price
+        System.out.println("Enter base price per square foot");
         int base_price_per_sqft = prompt.nextInt();
+
+        System.out.println("Please enter the finished area of the colonial model in square feet: ");
         int area_of_colonial_in_sqft = base_price_per_sqft * prompt.nextInt();
+        System.out.println("Please enter the finished area of the split-entry model in square feet: ");
         int area_of_split_entry_in_sqft = base_price_per_sqft * prompt.nextInt();
+        System.out.println("Please enter the finished area of the single-story model in square feet: ");
         int area_of_single_story_in_sqft = base_price_per_sqft * prompt.nextInt();
 
         System.out.println("Price of a colonial model: $" + area_of_colonial_in_sqft);
