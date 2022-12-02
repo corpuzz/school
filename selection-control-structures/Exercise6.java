@@ -44,9 +44,9 @@ public class Exercise6 {
          */
 
        // ============= second solution ==============
+
        // sort in ascending order (make it easier to plug into the the pythagorean formula)
        // With help from: https://stackoverflow.com/a/37145746
-
        int max = 0;
        int med = 0;
        int min = 0;
@@ -87,7 +87,7 @@ public class Exercise6 {
             }
        }
 
-       // use the pythagorean theorem to determine if it is a right triangle
+       // use the pythagorean formula to determine if it is a right triangle
        // a^2 + b^2 = c^2
        boolean result = Math.pow(min, 2) + Math.pow(med, 2) == Math.pow(max, 2);
 
