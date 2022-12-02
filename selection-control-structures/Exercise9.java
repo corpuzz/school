@@ -12,10 +12,6 @@ import java.util.Scanner;
 
 public class Exercise9 {
     public static void main(String[] args) {
-        // colonial, slit-entry, single-story
-        // input: base price, finished area in square feet
-        // output: price per square foot of the three models, model with least price
-
         Scanner prompt = new Scanner(System.in);
 
         int colonial = 0;
