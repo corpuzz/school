@@ -13,15 +13,11 @@ import java.util.Scanner;
 public class Exercise9 {
     public static void main(String[] args) {
         Scanner prompt = new Scanner(System.in);
-
-        int colonial = 0;
-        int split_entry = 0;
-        int single_story = 0;
-
-        // Enter base price
+        // Prompt for the base price
         System.out.println("Enter base price per square foot");
         int base_price_per_sqft = prompt.nextInt();
 
+        // Prompt for the finished area of models in square feet
         System.out.println("Please enter the finished area of the colonial model in square feet: ");
         int area_of_colonial_in_sqft = prompt.nextInt();
         System.out.println("Please enter the finished area of the split-entry model in square feet: ");
@@ -29,11 +25,12 @@ public class Exercise9 {
         System.out.println("Please enter the finished area of the single-story model in square feet: ");
         int area_of_single_story_in_sqft = prompt.nextInt();
 
+        // Print model prices
         System.out.println("Price of a colonial model: $" + (base_price_per_sqft * area_of_colonial_in_sqft));
         System.out.println("Price of a split-entry model: $" + (base_price_per_sqft * area_of_split_entry_in_sqft));
         System.out.println("Price of a single-story model: $" + (base_price_per_sqft * area_of_single_story_in_sqft));
 
-        // determine the lowest
+        // determine the lowest priced model
         if(area_of_colonial_in_sqft < area_of_split_entry_in_sqft && area_of_colonial_in_sqft < area_of_split_entry_in_sqft) {
             System.out.println("Lowest price is the colonial model at $" + area_of_colonial_in_sqft);
         }
