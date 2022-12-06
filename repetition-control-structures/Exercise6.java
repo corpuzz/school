@@ -1,5 +1,5 @@
 /*
- * Write a program that uses while loops to perform the following steps:
+ * Write a program that uses for loops to perform the following steps:
  * a. Prompt the user to input two integers: firstNum and secondNum. (firstNum * must be less than secondNum.)
  * b. Output all the odd numbers between firstNum and secondNum inclusive.
  * c. Output the sum of all the even numbers between firstNum and secondNum * inclusive.
@@ -19,6 +19,9 @@ public class Exercise6 {
         int firstNum = prompt.nextInt();
         System.out.println("Enter another integer: ");
         int secondNum = prompt.nextInt();
+
+        
+        // Make sure firstNum is less than secondNum
         while(true) {
             if(firstNum > secondNum) {
                 System.out.println("First number must be less than second number.");
