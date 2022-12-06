@@ -25,7 +25,7 @@ public class Exercise7 {
         int num_of_containers = num_of_boxes / boxes_per_container;
         // determine leftovers
         int leftover_cookies = cookies % cookies_per_box;
-        int leftover_boxes = num_of_boxes % num_of_containers;
+        int leftover_boxes = num_of_boxes % boxes_per_container;
 
         // Print out the results
         System.out.println("Number of boxes: " + num_of_boxes);
