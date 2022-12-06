@@ -23,7 +23,7 @@ public class Exercise7 {
 
         
         // Make sure firstNum is less than secondNum
-        while(true) {
+        do {
             if(firstNum > secondNum) {
                 System.out.println("First number must be less than second number.");
                 System.out.println("Enter an integer: (must be lower than next integer)");
@@ -32,13 +32,14 @@ public class Exercise7 {
                 secondNum = prompt.nextInt(); 
             }
             break;
-        }
+        }while(true);
 
-        // b.
+        // ================= b. ========================
         int even = 0;
         int odd = 0;
-
         int i = firstNum;
+
+        System.out.println("Odd numbers:");
         do {
             if(i % 2 == 0) {
                 even += i;
@@ -49,12 +50,26 @@ public class Exercise7 {
             i++;
         } while(i <= secondNum);
 
-        // c.
+        // ================= c. ========================
         System.out.println("c. Sum of all even: " + even);
 
+        // ================= d. ========================
+        int d_counter = 1;
+        System.out.println("Numbers and their squares from 1-10: (non-inclusive)");
+        do {
+            ++d_counter;
+            System.out.println(Math.pow(d_counter, 2));
+        } while(d_counter < 10);
 
-        // e. 
+        // ================= e. ========================
         System.out.println("e. Sum of squared odd " + (int)(Math.pow(odd, 2)));
         prompt.close();
+
+        // ================= f. ========================
+        char c = 'A';
+        do {
+            System.out.print(c);
+            c++;
+        } while(c <= 'Z');
     }
 }

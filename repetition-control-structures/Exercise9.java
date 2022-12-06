@@ -6,9 +6,13 @@
  * The student name does not contain any digits, and the user id and the password do not
  * contain any spaces.) 
  */
-
+import java.util.Scanner;
 
 public class Exercise9 {
     public static void main(String[] args) {
+        Scanner prompt = new Scanner(System.in);
+        System.out.println("Fill in the fields:\nName:_________ SSS No.:__________ User ID:___________ Password:___________");
+        String student_info = prompt.nextLine();        
+        
     }
 }

@@ -22,15 +22,14 @@ public class Exercise6 {
 
         
         // Make sure firstNum is less than secondNum
-        while(true) {
+        for(boolean result = true; result == true;) {
             if(firstNum > secondNum) {
                 System.out.println("First number must be less than second number.");
                 System.out.println("Enter an integer: (must be lower than next integer)");
                 firstNum = prompt.nextInt();
                 System.out.println("Enter another integer: ");
                 secondNum = prompt.nextInt(); 
-            }
-            break;
+            } else result = false;
         }
 
         // b.
@@ -48,9 +47,19 @@ public class Exercise6 {
         // c.
         System.out.println("c. Sum of all even: " + even);
 
+        // d.
+        for(int d_counter = 1; d_counter < 10; ++d_counter) {
+            System.out.println("Numbers and their squares from 1-10: (non-inclusive)");
+            System.out.println(Math.pow(d_counter, 2));
+        }
 
         // e. 
         System.out.println("e. Sum of squared odd " + (int)(Math.pow(odd, 2)));
         prompt.close();
+
+        // f.
+        for(char c = 'A'; c <= 'Z'; c++) {
+            System.out.print(c);
+        }
     }
 }
