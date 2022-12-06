@@ -15,8 +15,53 @@
  * c. The point size of a line.
  * d. If the lines are double-spaced, then double the point size of each character. 
  */
+
+import java.util.Scanner;
+
 public class Exercise8 {
     public static void main(String[] args) {
-        
+        Scanner scanner = new Scanner(System.in);
+
+    // Prompt the user for the paper size in inches
+    System.out.print("Enter the length of the paper in inches: ");
+    double length = scanner.nextDouble();
+    System.out.print("Enter the width of the paper in inches: ");
+    double width = scanner.nextDouble();
+
+    // Prompt the user for the margins in inches
+    System.out.print("Enter the top margin in inches: ");
+    double topMargin = scanner.nextDouble();
+    System.out.print("Enter the bottom margin in inches: ");
+    double bottomMargin = scanner.nextDouble();
+    System.out.print("Enter the left margin in inches: ");
+    double leftMargin = scanner.nextDouble();
+    System.out.print("Enter the right margin in inches: ");
+    double rightMargin = scanner.nextDouble();
+
+    // Calculate the usable area of the paper
+    double usableLength = length - topMargin - bottomMargin;
+    double usableWidth = width - leftMargin - rightMargin;
+
+    // Prompt the user for the point size of a line
+    System.out.print("Enter the point size of a line: ");
+    double pointSize = scanner.nextDouble();
+
+    // Prompt the user for the line spacing
+    System.out.print("Enter 1 for single-spaced lines or 2 for double-spaced lines: ");
+    int lineSpacing = scanner.nextInt();
+
+    // Calculate the maximum number of characters per line
+    double charactersPerInch = 72 / pointSize;
+    int maxCharactersPerLine = (int) (usableWidth * charactersPerInch);
+
+    // Calculate the maximum number of lines that can be printed
+    double linesPerInch = 72 / (pointSize * lineSpacing);
+    int maxLines = (int) (usableLength * linesPerInch);
+
+    // Print the results
+    System.out.println("The maximum number of characters per line is " + maxCharactersPerLine);
+    System.out.println("The maximum number of lines is " + maxLines);
+
+    scanner.close();
     }
 }
