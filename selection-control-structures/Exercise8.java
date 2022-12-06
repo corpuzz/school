@@ -20,48 +20,48 @@ import java.util.Scanner;
 
 public class Exercise8 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner prompt = new Scanner(System.in);
 
-    // Prompt the user for the paper size in inches
-    System.out.print("Enter the length of the paper in inches: ");
-    double length = scanner.nextDouble();
-    System.out.print("Enter the width of the paper in inches: ");
-    double width = scanner.nextDouble();
+        // Prompt the user for the paper size in inches
+        System.out.print("Enter the length of the paper in inches: ");
+        double length = prompt.nextDouble();
+        System.out.print("Enter the width of the paper in inches: ");
+        double width = prompt.nextDouble();
 
-    // Prompt the user for the margins in inches
-    System.out.print("Enter the top margin in inches: ");
-    double topMargin = scanner.nextDouble();
-    System.out.print("Enter the bottom margin in inches: ");
-    double bottomMargin = scanner.nextDouble();
-    System.out.print("Enter the left margin in inches: ");
-    double leftMargin = scanner.nextDouble();
-    System.out.print("Enter the right margin in inches: ");
-    double rightMargin = scanner.nextDouble();
+        // Prompt the user for the margins in inches
+        System.out.print("Enter the top margin in inches: ");
+        double top_margin = prompt.nextDouble();
+        System.out.print("Enter the bottom margin in inches: ");
+        double bottom_margin = prompt.nextDouble();
+        System.out.print("Enter the left margin in inches: ");
+        double left_margin = prompt.nextDouble();
+        System.out.print("Enter the right margin in inches: ");
+        double right_margin = prompt.nextDouble();
 
-    // Calculate the usable area of the paper
-    double usableLength = length - topMargin - bottomMargin;
-    double usableWidth = width - leftMargin - rightMargin;
+        // Calculate the usable area of the paper
+        double usable_length = length - top_margin - bottom_margin;
+        double usable_width = width - left_margin - right_margin;
 
-    // Prompt the user for the point size of a line
-    System.out.print("Enter the point size of a line: ");
-    double pointSize = scanner.nextDouble();
+        // Prompt the user for the point size of a line
+        System.out.print("Enter the point size of a line: ");
+        double point_size = prompt.nextDouble();
 
-    // Prompt the user for the line spacing
-    System.out.print("Enter 1 for single-spaced lines or 2 for double-spaced lines: ");
-    int lineSpacing = scanner.nextInt();
+        // Prompt the user for the line spacing
+        System.out.print("Enter 1 for single-spaced lines or 2 for double-spaced lines: ");
+        int line_spacing = prompt.nextInt();
 
-    // Calculate the maximum number of characters per line
-    double charactersPerInch = 72 / pointSize;
-    int maxCharactersPerLine = (int) (usableWidth * charactersPerInch);
+        // Calculate the number of characters per line
+        double characters_per_inch = 72 / point_size;
+        int characters_per_line = (int) (usable_width * characters_per_inch);
 
-    // Calculate the maximum number of lines that can be printed
-    double linesPerInch = 72 / (pointSize * lineSpacing);
-    int maxLines = (int) (usableLength * linesPerInch);
+        // Calculate the number of lines that can be printed
+        double lines_per_inch = 72 / (point_size * line_spacing);
+        int num_of_lines = (int) (usable_length * lines_per_inch);
 
-    // Print the results
-    System.out.println("The maximum number of characters per line is " + maxCharactersPerLine);
-    System.out.println("The maximum number of lines is " + maxLines);
+        // Print the results
+        System.out.println("The number of characters per line is " + characters_per_line);
+        System.out.println("The number of lines is " + num_of_lines);
 
-    scanner.close();
+        prompt.close();
     }
 }
