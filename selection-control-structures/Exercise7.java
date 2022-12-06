@@ -16,7 +16,8 @@ public class Exercise7 {
         Scanner prompt = new Scanner(System.in);
         final int cookies_per_box = 24;
         final int boxes_per_container = 75;
-        
+
+        System.out.println("Enter the total number of cookies: ");
         int cookies = prompt.nextInt();
 
         // determine number of boxes and containers 
