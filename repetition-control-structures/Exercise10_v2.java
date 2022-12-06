@@ -40,7 +40,7 @@ public class Exercise10_v2 {
             break;
         }
 
-        // Assigning player's choice to it's integer representation
+        // Assign player's choice to it's integer representation
         switch(str_p_choice) {
             case "rock":
                 p_choice = rock;
@@ -53,7 +53,7 @@ public class Exercise10_v2 {
                 break;
         }
 
-        // Assigning AI choice to string for output
+        // Assign AI choice to string for output
         switch(ai_choice) {
             case 0:
                 str_ai_choice = "rock";
@@ -66,18 +66,17 @@ public class Exercise10_v2 {
                 break;
         }
 
-        // check for ties
+        // Check for ties
         if(p_choice == rock && ai_choice == rock || p_choice == paper && ai_choice == paper || p_choice == scissors && ai_choice == scissors) {
             System.out.println(String.format("Player: %s \nAI: %s\nOoh, it's a tie!", str_p_choice, str_ai_choice));
-        // rock beats scissors
+        // Player wins
         } else if(p_choice == rock && ai_choice == scissors) {
             System.out.println(String.format("Player: %s \nAI: %s\nYou WIN!", str_p_choice, str_ai_choice));
-        // paper beats rock
         } else if(p_choice == paper && ai_choice == rock) {
             System.out.println(String.format("Player: %s \nAI: %s\nYou WIN!", str_p_choice, str_ai_choice));
-        // scissors beats paper
         } else if(p_choice == scissors && ai_choice == rock) {
             System.out.println(String.format("Player: %s \nAI: %s\nYou WIN!", str_p_choice, str_ai_choice));
+        // Player lose, computer wins
         } else {
             System.out.println(String.format("Player: %s \nAI: %s\nYou LOSE!", str_p_choice, str_ai_choice));
         }
