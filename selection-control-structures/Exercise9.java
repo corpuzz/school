@@ -22,8 +22,7 @@ public class Exercise9 {
         System.out.print("Enter the finished area (in square feet) for the colonial model: ");
         colonial_area = prompt.nextDouble();
 
-        // Prompt the user for the base price and finished area for the split-entry
-        // model
+        // Prompt the user for the base price and finished area for the split-entry model
         System.out.print("Enter the base price for the split-entry model: ");
         split_entry_price = prompt.nextDouble();
         System.out.print("Enter the finished area (in square feet) for the split-entry model: ");
