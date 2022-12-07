@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class Exercise9 {
     public static void main(String[] args) {
         Scanner prompt = new Scanner(System.in);
-
         double colonial_price, split_entry_price, single_story_price;
         double colonial_area, split_entry_area, single_story_area;
 
