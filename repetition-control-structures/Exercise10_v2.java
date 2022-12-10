@@ -20,8 +20,9 @@ public class Exercise10_v2 {
         final int paper = 1;
         final int scissors = 2;
 
-        System.out.println("Let's play Rock Paper Scissors!\nBato bato pick: ");
-        String str_p_choice = scan.nextLine();
+        System.out.println("Let's play Rock Paper Scissors!\nBato bato pick: (Enter rock, paper, or scissors)");
+        String input = scan.nextLine();
+        String str_p_choice = input.toLowerCase();
         int p_choice = 0; // Players choice as integer for easier comparison with == operator
         int ai_choice = (int)(Math.random()*3);
         String str_ai_choice = " "; // AI's choice as string for output
