@@ -1,6 +1,6 @@
 /* Requirements = Create a Point of Sale system that:
- * - Customer selects an item/s and goes to the casier. (Create a function to display items and get user input) 
- * - The casier then "scans" the product/s seleted by the customer (Display payment methods for customer, figure out the balance) 
+ * - Customer selects an item/choice and goes to the casier. (Create a function to display items and get user input) 
+ * - The casier then "scans" the product/choice seleted by the customer (Display payment methods for customer, figure out the balance) 
 
  * - Create a separate function for inventory 
  *   Use an array for inventory, 
@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 public class PointOfSale {
   // Global Variables
-  static ArrayList<String> products = new ArrayList();
+  static ArrayList<String> products = new ArrayList<String>();
   static String items = "";
 
   public static void main(String[] args) {
@@ -33,15 +33,17 @@ public class PointOfSale {
     // ArrayList<String> product = fillInventory();
     // Object[] options = {"Add To Cart", "Cancel"};
     // int choice =  JOptionPane.showInputDialog(null, product, "Buy Fruits", JOptionPane.OK_CANCEL_OPTION, options);
-Object[] possibilities = {"ham", "spam", "yam"};
-String s = (String)JOptionPane.showInputDialog(
+  Object[] products = {"8GB Ram, 8 Core GPU", "8GB Ram, 10 Core GPU"};
+  String choice = (String) JOptionPane.showInputDialog(
                     null,
-                    "What are we buying today?",
-                    "Customized Dialog",
-                    JOptionPane.PLAIN_MESSAGE,
+                    "Buy the new Apple MaBook Air M2 Series\nSelect a variant:",
+                    "TINDAHAN STORE",
+                    JOptionPane.QUESTION_MESSAGE,
                     null,
-                    possibilities,
-                    possibilities.);
+                    products,
+                    products[0]
+                    );
+  System.out.println(choice);
   }
 
   public static void CartMenu() {
