@@ -100,17 +100,17 @@ public class InventoryManagementSystem {
          inventory = String.format("%-20s %-20s %-20s%n", "Products", "Quantity", "Price");
          inventory += String.format("%nNo items found.");
         } else {
-         inventory = String.format("%-20s %-22s %-24s%n", "Products", "Quantity", "Price");
+         inventory = String.format("%-20s %-20s %-20s%n", "Products", "Quantity", "Price");
         }
         // Add each product to the invetory
         for (int i = 0; i < numProducts; i++) {
             String name = products[i];
             int quantity = quantities[i];
             Double price = prices[i];
-            inventory += String.format("%-20s %-22d %-24.2f%n", name, quantity, price);
+            inventory += String.format("%-20s %-20d %-20.2f%n", name, quantity, price);
         }
         // Display the inventory
-        JOptionPane.showMessageDialog(null, inventory);
+        JOptionPane.showMessageDialog(null, inventory, "INVENTORY", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static void removeProduct() {
@@ -118,9 +118,9 @@ public class InventoryManagementSystem {
         if(products[0] == null) {
             JOptionPane.showMessageDialog(
                 null, 
-                "Inventory is empty.",
-                null,
-                JOptionPane.INFORMATION_MESSAGE);
+                "No products found",
+                "INVENTORY",
+                JOptionPane.WARNING_MESSAGE);
             return;
         }
         // Get the product name from the user
@@ -142,7 +142,7 @@ public class InventoryManagementSystem {
         // Remove product from the inventory
         // (reassigning values of array)
         if (index != -1) {
-            for (int i = index; i < numProducts - 1; i++) {
+            for (int i = index; i < products.length; i++) {
                 products[i] = products[i + 1];
                 quantities[i] = quantities[i + 1];
                 prices[i] = prices[i + 1];
