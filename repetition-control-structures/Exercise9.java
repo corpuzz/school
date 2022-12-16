@@ -7,12 +7,55 @@
  * contain any spaces.) 
  */
 import java.util.Scanner;
+import java.lang.Integer;
 
 public class Exercise9 {
     public static void main(String[] args) {
-        Scanner prompt = new Scanner(System.in);
-        System.out.println("Fill in the fields:\nName:_________ SSS No.:__________ User ID:___________ Password:___________");
-        String student_info = prompt.nextLine();        
-        
+        while(true) {
+            Scanner prompt = new Scanner(System.in);
+            System.out.println("Fill in the fields:\nName:_________ SSS No.:__________ User ID:___________ Password:___________");
+            String input = prompt.nextLine();        
+            
+            // We have some string parsing to do
+
+
+            String name = "";
+            String ssn = ""; 
+            String id = "";
+            String password = "";
+            int lastIndexOfName;
+            int i = 0;
+            for(; i < input.length(); ++i) {
+                char c = input.charAt(i);
+                if(!Character.isDigit(c)) {
+                    name += c;
+                } else {
+                    // continue parsing for ssn
+                    lastIndexOfName = i;
+                    ssn += c;
+                }
+            }
+
+            // move on from name and ssn
+            // parse the id now. ID should be 9 digit numbers
+            for(; i < input.length(); ++i) {
+                char c = input.charAt(i);
+                if(c != ' ') {
+                    id += c;
+                } else continue;
+            }
+
+            for(; i < input.length(); ++i) {
+                char c = input.charAt(i);
+                if(c != ' ') {
+                    password += c;
+                } else continue;
+            }
+
+            System.out.println(String.format("Name: %s SSN: %s ID: %s Password: %s", name, ssn, id, password));
+            prompt.close();
+            break;
+        }
     }
 }
+
