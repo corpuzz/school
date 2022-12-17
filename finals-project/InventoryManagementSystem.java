@@ -107,7 +107,7 @@ public class InventoryManagementSystem {
             String name = products[i];
             int quantity = quantities[i];
             Double price = prices[i];
-            inventory += String.format("%-20s %-20d %-20.2f%n", name, quantity, price);
+            inventory += String.format("%-20s %-20d ₱%-20.2f%n", name, quantity, price);
         }
         // Display the inventory
         JOptionPane.showMessageDialog(null, inventory, "INVENTORY", JOptionPane.PLAIN_MESSAGE);
