@@ -132,7 +132,7 @@ public class InventoryManagementSystem {
 
         // Search for the product 
         int index = -1; // holds the index for the product to be removed
-        for (int i = 0; i < products.length; i++) {
+        for (int i = 0; i < numProducts - 1; i++) {
             if (products[i].equals(name.toUpperCase())) {
                 index = i;
                 break;
@@ -142,7 +142,7 @@ public class InventoryManagementSystem {
         // Remove product from the inventory
         // (reassigning values of array)
         if (index != -1) {
-            for (int i = index; i < products.length; i++) {
+            for (int i = index; i < numProducts - 1; i++) {
                 products[i] = products[i + 1];
                 quantities[i] = quantities[i + 1];
                 prices[i] = prices[i + 1];
