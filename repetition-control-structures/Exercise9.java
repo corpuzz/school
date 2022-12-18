@@ -17,8 +17,6 @@ public class Exercise9 {
             String input = prompt.nextLine();        
             
             // We have some string parsing to do
-
-
             String name = "";
             String ssn = ""; 
             String id = "";
@@ -59,3 +57,5 @@ public class Exercise9 {
     }
 }
 
+// nakakatamad mag manual parse ng strings! 
+// 
