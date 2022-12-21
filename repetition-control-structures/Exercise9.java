@@ -7,55 +7,95 @@
  * contain any spaces.) 
  */
 import java.util.Scanner;
-import java.lang.Integer;
 
 public class Exercise9 {
     public static void main(String[] args) {
         while(true) {
-            Scanner prompt = new Scanner(System.in);
-            System.out.println("Fill in the fields:\nName:_________ SSS No.:__________ User ID:___________ Password:___________");
-            String input = prompt.nextLine();        
-            
-            // We have some string parsing to do
             String name = "";
             String ssn = ""; 
             String id = "";
             String password = "";
-            int lastIndexOfName;
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Enter your name, SSN number, ID, and your password: (separated by one space)");
+            String input = scanner.nextLine();        
+            // Assume name is always a word followed by a space followed by another word: "John Doe"
+            // Choose
+
+            int spaceCounter = 0;
             int i = 0;
-            for(; i < input.length(); ++i) {
+            while (i < input.length()) {
                 char c = input.charAt(i);
-                if(!Character.isDigit(c)) {
+                if (c == ' ') spaceCounter++;
+                // Insert to name
+                if (spaceCounter < 2) {
                     name += c;
-                } else {
-                    // continue parsing for ssn
-                    lastIndexOfName = i;
+                    i++;
+                    continue;
+                }
+                // Insert to ssn
+                if (spaceCounter < 3) {
+                    if(c == ' ') { // do not include whitespace
+                        i++;
+                        continue;
+                    }
                     ssn += c;
+                    i++;
+                    continue;
+                }
+                // Insert to id. Format: KCP ID, no dash
+                if (spaceCounter < 4) {
+                    if(c == ' ') { // do not include whitespace
+                        i++;
+                        continue;
+                    }
+                    id += c;
+                    i++;
+                    continue;
+                }
+                // Insert to password
+                if (spaceCounter < 5) {
+                    if(c == ' ') { // do not include whitespace
+                        i++;
+                        continue;
+                    }
+                    password += c;
+                    i++;
+                    continue;
                 }
             }
 
-            // move on from name and ssn
-            // parse the id now. ID should be 9 digit numbers
-            for(; i < input.length(); ++i) {
-                char c = input.charAt(i);
-                if(c != ' ') {
-                    id += c;
-                } else continue;
+            // Format and mask ssn
+            String maskedSsn = "";
+            int j = 1;
+            while(j <= ssn.length()) {
+                if(j == 3 || j == 5) {
+                    maskedSsn += "x-";
+                    j++;
+                } else {
+                maskedSsn += "x";
+                j++;
+                }
+            }
+            
+            // Mask password
+            String maskPassword = "";
+            for(int k = 1; k <= password.length(); k++) {
+                maskPassword += "x";
             }
 
-            for(; i < input.length(); ++i) {
-                char c = input.charAt(i);
-                if(c != ' ') {
-                    password += c;
-                } else continue;
+            // Handle invalid input for SSN and ID. Invalid name and password are not handled though
+            if(ssn.length() != 9) {
+                System.out.println("Invalid SSN: (Must be a 9 digit number)");
+                continue;
+            } else if(id.length() != 10) {
+                System.out.println("Invalid ID: (Must be a 10 digit number)");
+                continue;
+            } else {
+                System.out.println(String.format("STUDENT INFORMATION\nName: %s \nSSN: %s \nID: %s \nPassword: %s", name.toUpperCase(), maskedSsn, id, maskPassword));
             }
-
-            System.out.println(String.format("Name: %s SSN: %s ID: %s Password: %s", name, ssn, id, password));
-            prompt.close();
+            scanner.close();
             break;
         }
     }
 }
-
-// nakakatamad mag manual parse ng strings! 
-// 
