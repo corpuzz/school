@@ -25,6 +25,8 @@ public class PasswordGen {
             in.close(); // Close the input buffer
             break; // Exit out of the procedure
         }
+
+        System.out.println("Horayt");
     }
 
     public static String generate_password(int pass_length) {
